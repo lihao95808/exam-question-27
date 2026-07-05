@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第27题（初一期末压轴·12分）</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17202a;
+      --muted: #5d6978;
+      --line: #d9e0e8;
+      --paper: #ffffff;
+      --bg: #eef3f6;
+      --accent: #285f73;
+      --soft: #f7fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "SimSun", serif;
+      line-height: 1.78;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 28px auto;
+      padding: 46px 56px 54px;
+      background: var(--paper);
+      box-shadow: 0 18px 55px rgba(15, 23, 42, 0.14);
+      border-top: 7px solid var(--accent);
+    }
+
+    .exam-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: end;
+      padding-bottom: 22px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .exam-kicker {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      font-size: 15px;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.2;
+      letter-spacing: 0;
+      font-weight: 800;
+    }
+
+    .score-box {
+      min-width: 132px;
+      padding: 10px 14px;
+      border: 1.5px solid var(--ink);
+      text-align: center;
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    .score-box strong {
+      display: block;
+      font-size: 26px;
+      line-height: 1.1;
+    }
+
+    .problem {
+      margin-top: 28px;
+      font-size: 21px;
+    }
+
+    .lead {
+      margin: 0 0 24px;
+      text-indent: 2em;
+    }
+
+    .part {
+      margin: 24px 0 0;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .part-title {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      margin: 0 0 12px;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .points {
+      color: var(--muted);
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .sub-list {
+      margin: 8px 0 0 2.1em;
+      padding: 0;
+    }
+
+    .sub-list li {
+      margin: 6px 0;
+      padding-left: 4px;
+    }
+
+    .math {
+      font-family: "Cambria Math", "Times New Roman", "SimSun", serif;
+      white-space: nowrap;
+    }
+
+    .figure-section {
+      margin-top: 34px;
+      padding-top: 24px;
+      border-top: 2px solid var(--ink);
+    }
+
+    .figure-title {
+      margin: 0 0 18px;
+      text-align: center;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .figures {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .figure-card {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      padding: 14px 12px 12px;
+      min-width: 0;
+    }
+
+    .figure-card svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1.13;
+      background: #fff;
+      border: 1px solid #e7edf3;
+    }
+
+    .caption {
+      margin-top: 8px;
+      text-align: center;
+      color: var(--muted);
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .note {
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    svg .axis,
+    svg .shape,
+    svg .connector {
+      stroke: #111827;
+      stroke-width: 2.4;
+      fill: none;
+      vector-effect: non-scaling-stroke;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    svg .point {
+      fill: #111827;
+    }
+
+    svg .label {
+      fill: #111827;
+      font-family: "Times New Roman", "SimSun", serif;
+      font-size: 20px;
+      font-style: italic;
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        width: min(100% - 18px, 760px);
+        margin: 10px auto;
+        padding: 28px 20px 34px;
+      }
+
+      .exam-head {
+        grid-template-columns: 1fr;
+      }
+
+      .score-box {
+        width: 150px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .problem {
+        font-size: 18px;
+      }
+
+      .figures {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: 100%;
+        margin: 0;
+        padding: 20mm 16mm;
+        box-shadow: none;
+        border-top: 0;
+      }
+
+      .figure-card {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page" aria-label="第27题试卷展示">
+    <header class="exam-head">
+      <div>
+        <p class="exam-kicker">初一年级数学期末考试 · 压轴题 · 全新原创</p>
+        <h1>第27题（初一期末压轴）</h1>
+      </div>
+      <div class="score-box" aria-label="本题分值">
+        本题满分
+        <strong>12</strong>
+        分
+      </div>
+    </header>
+
+    <section class="problem">
+      <p class="lead">
+        已知点 <span class="math">A(6,6)</span>、<span class="math">B(2,2)</span>，将线段
+        <span class="math">AB</span> 向左平移 <span class="math">m(m&gt;0)</span> 个单位长度得到线段
+        <span class="math">CD</span>，其中点 <span class="math">A</span> 的对应点为
+        <span class="math">C</span>，点 <span class="math">B</span> 的对应点为
+        <span class="math">D</span>。
+      </p>
+
+      <article class="part">
+        <h2 class="part-title">（1）<span class="points">4分</span></h2>
+        <p>当 <span class="math">m=2</span> 时：</p>
+        <ol class="sub-list">
+          <li>写出点 <span class="math">C</span>、<span class="math">D</span> 的坐标；</li>
+          <li>连接 <span class="math">AC</span>、<span class="math">BC</span>，求三角形 <span class="math">ABC</span> 的面积。</li>
+        </ol>
+      </article>
+
+      <article class="part">
+        <h2 class="part-title">（2）<span class="points">4分</span></h2>
+        <p>
+          设直线 <span class="math">AD</span> 与 <span class="math">y</span> 轴交于点
+          <span class="math">P</span>，且点 <span class="math">P</span> 在原点上方，已知
+          <span class="math">OP=3</span>。
+        </p>
+        <p>求 <span class="math">m</span> 的值。</p>
+      </article>
+
+      <article class="part">
+        <h2 class="part-title">（3）<span class="points">4分</span></h2>
+        <p>
+          当 <span class="math">m=4</span> 时，在由
+          <span class="math">A</span>、<span class="math">C</span>、<span class="math">D</span>、<span class="math">B</span>
+          依次围成的平行四边形 <span class="math">ACDB</span> 内取动点
+          <span class="math">M(a,a+2)</span>（<span class="math">0&lt;a&lt;4</span>），连接
+          <span class="math">AM</span>、<span class="math">BM</span>、<span class="math">CM</span>、<span class="math">DM</span>。
+        </p>
+        <p>
+          记三角形 <span class="math">ABM</span> 的面积为 <span class="math">S<sub>1</sub></span>，三角形
+          <span class="math">CDM</span> 的面积为 <span class="math">S<sub>2</sub></span>。
+        </p>
+        <p>
+          判断是否存在常数 <span class="math">k</span>，使得
+          <span class="math">S<sub>1</sub>=kS<sub>2</sub></span>，且该关系与
+          <span class="math">a</span> 无关。若存在，求出 <span class="math">k</span>；若不存在，请说明理由。
+        </p>
+      </article>
+    </section>
+
+    <section class="figure-section" aria-label="辅助图">
+      <h2 class="figure-title">第27题辅助图（示意图）</h2>
+      <div class="figures">
+        <figure class="figure-card">
+          <svg viewBox="0 0 300 266" role="img" aria-label="第1问辅助图">
+            <defs>
+              <marker id="arrow-1" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="strokeWidth">
+                <path d="M0,0 L9,4.5 L0,9 Z" fill="#111827"></path>
+              </marker>
+            </defs>
+            <line class="axis" x1="38" y1="218" x2="274" y2="218" marker-end="url(#arrow-1)"></line>
+            <line class="axis" x1="58" y1="236" x2="58" y2="36" marker-end="url(#arrow-1)"></line>
+            <text class="label" x="276" y="226">x</text>
+            <text class="label" x="46" y="30">y</text>
+            <text class="label" x="42" y="238">O</text>
+
+            <polygon class="shape" points="222,84 150,84 78,156 150,156"></polygon>
+            <line class="connector" x1="222" y1="84" x2="150" y2="84"></line>
+            <line class="connector" x1="222" y1="84" x2="150" y2="156"></line>
+            <circle class="point" cx="222" cy="84" r="5"></circle>
+            <circle class="point" cx="150" cy="156" r="5"></circle>
+            <circle class="point" cx="150" cy="84" r="5"></circle>
+            <circle class="point" cx="78" cy="156" r="5"></circle>
+            <text class="label" x="228" y="79">A</text>
+            <text class="label" x="155" y="181">B</text>
+            <text class="label" x="130" y="79">C</text>
+            <text class="label" x="60" y="181">D</text>
+          </svg>
+          <figcaption class="caption">（1）平移后连接 AC、BC</figcaption>
+        </figure>
+
+        <figure class="figure-card">
+          <svg viewBox="0 0 300 266" role="img" aria-label="第2问辅助图">
+            <defs>
+              <marker id="arrow-2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="strokeWidth">
+                <path d="M0,0 L9,4.5 L0,9 Z" fill="#111827"></path>
+              </marker>
+            </defs>
+            <line class="axis" x1="28" y1="218" x2="276" y2="218" marker-end="url(#arrow-2)"></line>
+            <line class="axis" x1="118" y1="236" x2="118" y2="36" marker-end="url(#arrow-2)"></line>
+            <text class="label" x="278" y="226">x</text>
+            <text class="label" x="106" y="30">y</text>
+            <text class="label" x="102" y="238">O</text>
+
+            <line class="shape" x1="232" y1="72" x2="80" y2="168"></line>
+            <circle class="point" cx="232" cy="72" r="5"></circle>
+            <circle class="point" cx="118" cy="144" r="5"></circle>
+            <circle class="point" cx="80" cy="168" r="5"></circle>
+            <text class="label" x="238" y="66">A</text>
+            <text class="label" x="124" y="138">P</text>
+            <text class="label" x="62" y="193">D</text>
+          </svg>
+          <figcaption class="caption">（2）P 在原点上方</figcaption>
+        </figure>
+
+        <figure class="figure-card">
+          <svg viewBox="0 0 300 266" role="img" aria-label="第3问辅助图">
+            <defs>
+              <marker id="arrow-3" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto" markerUnits="strokeWidth">
+                <path d="M0,0 L9,4.5 L0,9 Z" fill="#111827"></path>
+              </marker>
+            </defs>
+            <line class="axis" x1="28" y1="220" x2="276" y2="220" marker-end="url(#arrow-3)"></line>
+            <line class="axis" x1="102" y1="238" x2="102" y2="34" marker-end="url(#arrow-3)"></line>
+            <text class="label" x="278" y="228">x</text>
+            <text class="label" x="90" y="29">y</text>
+            <text class="label" x="86" y="240">O</text>
+
+            <polygon class="shape" points="232,76 160,76 88,148 160,148"></polygon>
+            <line class="connector" x1="232" y1="76" x2="174" y2="104"></line>
+            <line class="connector" x1="160" y1="148" x2="174" y2="104"></line>
+            <line class="connector" x1="160" y1="76" x2="174" y2="104"></line>
+            <line class="connector" x1="88" y1="148" x2="174" y2="104"></line>
+            <circle class="point" cx="232" cy="76" r="5"></circle>
+            <circle class="point" cx="160" cy="148" r="5"></circle>
+            <circle class="point" cx="160" cy="76" r="5"></circle>
+            <circle class="point" cx="88" cy="148" r="5"></circle>
+            <circle class="point" cx="174" cy="104" r="5"></circle>
+            <text class="label" x="238" y="70">A</text>
+            <text class="label" x="166" y="173">B</text>
+            <text class="label" x="140" y="70">C</text>
+            <text class="label" x="70" y="173">D</text>
+            <text class="label" x="181" y="100">M</text>
+          </svg>
+          <figcaption class="caption">（3）M 在平行四边形内部运动</figcaption>
+        </figure>
+      </div>
+      <p class="note">说明：辅助图为示意图，答题时以题目所给坐标和条件为准。</p>
+    </section>
+  </main>
+</body>
+</html>
