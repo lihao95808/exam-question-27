@@ -208,6 +208,65 @@
       margin-bottom: 15px;
     }
 
+    .correction-note {
+      margin-top: 18px;
+      padding: 12px 16px;
+      border: 1px solid #b91c1c;
+      border-left: 5px solid #b91c1c;
+      background: #fff7ed;
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .correction-title {
+      margin: 0 0 4px;
+      font-weight: 700;
+    }
+
+    .correction-note p {
+      margin: 0;
+    }
+
+    .correction-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 8px;
+      margin-top: 2px;
+    }
+
+    .correction-note a {
+      color: #991b1b;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .wrong-question {
+      scroll-margin-top: 76px;
+      margin-left: -10px;
+      padding: 8px 10px 8px 12px;
+      border-left: 4px solid #b91c1c;
+      background: #fff7ed;
+    }
+
+    .wrong-badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      margin-left: 8px;
+      padding: 1px 8px;
+      border: 1px solid #b91c1c;
+      border-radius: 999px;
+      background: #fee2e2;
+      color: #991b1b;
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.35;
+      white-space: nowrap;
+      vertical-align: text-bottom;
+    }
+
     .question-text {
       min-height: 28px;
     }
@@ -326,15 +385,42 @@
     }
 
     @media (max-width: 900px) {
+      body {
+        line-height: 1.65;
+      }
+
       .paper {
-        width: min(100% - 18px, 760px);
-        margin: 12px auto 28px;
-        padding: 28px 20px 36px;
+        width: 100%;
+        margin: 0 auto 28px;
+        padding: 26px 14px 36px;
         box-shadow: none;
       }
 
       h1 {
-        font-size: 25px;
+        font-size: 22px;
+        overflow-wrap: anywhere;
+      }
+
+      .paper-meta {
+        justify-content: flex-start;
+        gap: 6px 14px;
+        font-size: 14px;
+      }
+
+      .notice {
+        padding: 12px 14px;
+        font-size: 15px;
+        overflow-wrap: anywhere;
+      }
+
+      .section-title {
+        font-size: 19px;
+        overflow-wrap: anywhere;
+      }
+
+      .question-list {
+        padding-left: 1.35em;
+        font-size: 16px;
       }
 
       .student-row,
@@ -343,7 +429,31 @@
       }
 
       .option-row {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
+        gap: 6px;
+        font-size: 15px;
+      }
+
+      .option-row span,
+      .question-text,
+      .notice li {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+
+      .math {
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+
+      .correction-note {
+        padding: 10px 12px;
+        font-size: 15px;
+      }
+
+      .wrong-question {
+        margin-left: -6px;
+        padding: 8px 8px 8px 10px;
       }
     }
 
@@ -366,6 +476,13 @@
         margin: 0;
         padding: 0;
         box-shadow: none;
+      }
+
+      .correction-note,
+      .wrong-question,
+      .wrong-badge {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
       }
 
       .section,
@@ -437,6 +554,14 @@
       </div>
     </section>
 
+    <section class="correction-note" aria-label="订正标记">
+      <p class="correction-title">订正标记</p>
+      <p>本次最终得分 <strong>106/120</strong>。</p>
+      <p class="correction-links">剩余需订正题目：
+        <a href="#q9">第9题</a><a href="#q14">第14题</a><a href="#q18">第18题</a><a href="#q22">第22题</a>
+      </p>
+    </section>
+
     <section class="section" aria-labelledby="choice-title">
       <h2 id="choice-title" class="section-title">一、选择题（本大题共10小题，每小题3分，共30分）</h2>
       <ol class="question-list compact">
@@ -472,8 +597,8 @@
           <div class="question-text">将点 <span class="math">A(-1,2)</span> 向右平移 <span class="math">3</span> 个单位，再向下平移 <span class="math">4</span> 个单位，得到的点的坐标是（　　）</div>
           <div class="option-row"><span>A. <span class="math">(-4,6)</span></span><span>B. <span class="math">(2,6)</span></span><span>C. <span class="math">(2,-2)</span></span><span>D. <span class="math">(-4,-2)</span></span></div>
         </li>
-        <li>
-          <div class="question-text">若 <span class="math">x&lt;y</span>，则下列不等式一定成立的是（　　）</div>
+        <li id="q9" class="wrong-question">
+          <div class="question-text">若 <span class="math">x&lt;y</span>，则下列不等式一定成立的是（　　）<span class="wrong-badge">错题</span></div>
           <div class="option-row"><span>A. <span class="math">x+2&lt;y+2</span></span><span>B. <span class="math">-2x&lt;-2y</span></span><span>C. <span class="math">x<sup>2</sup>&lt;y<sup>2</sup></span></span><span>D. <span class="math">x/2&gt;y/2</span></span></div>
         </li>
         <li>
@@ -502,8 +627,9 @@
         <li>计算：<span class="math">|-5|+&radic;49-&#8731;8=</span> <span class="answer-line"></span>。</li>
         <li>不等式 <span class="math">5-2x&gt;1</span> 的解集是 <span class="answer-line"></span>。</li>
         <li>若点 <span class="math">P(m-2,3m+1)</span> 在 <span class="math">y</span> 轴上，则 <span class="math">m=</span> <span class="answer-line"></span>。</li>
-        <li>
+        <li id="q14" class="wrong-question">
           如图，<span class="math">l<sub>1</sub>&parallel;l<sub>2</sub></span>，若 <span class="math">&ang;1=42&deg;</span>，则 <span class="math">&ang;2=</span> <span class="answer-line"></span>。
+          <span class="wrong-badge">错题</span>
           <div class="inline-figure">
             <svg viewBox="0 0 420 180" role="img" aria-label="平行线角度图">
               <line class="line" x1="42" y1="55" x2="378" y2="55"></line>
@@ -532,8 +658,9 @@
           </ol>
           <div class="work-space"></div>
         </li>
-        <li>
+        <li id="q18" class="wrong-question">
           （本题5分）解不等式组 <span class="math">{2x+1&ge;-3, 3-x&gt;1}</span>，并把解集在数轴上表示出来。
+          <span class="wrong-badge">错题</span>
           <div class="work-space"></div>
         </li>
         <li>
@@ -565,8 +692,9 @@
           </ol>
           <div class="work-space tall"></div>
         </li>
-        <li>
+        <li id="q22" class="wrong-question">
           （本题6分）学校准备购买甲、乙两种奖品共 <span class="math">60</span> 件。甲奖品每件 <span class="math">8</span> 元，乙奖品每件 <span class="math">5</span> 元，共用 <span class="math">390</span> 元。求甲、乙两种奖品各购买多少件。
+          <span class="wrong-badge">错题</span>
           <div class="work-space"></div>
         </li>
         <li>
