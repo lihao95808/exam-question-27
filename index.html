@@ -3,25 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>七年级下册数学期末考试卷</title>
+  <meta name="description" content="武汉市硚口区七年级下学期数学期末模拟试卷（二），满分120分。">
+  <title>七年级下册数学期末考试卷（二）</title>
   <style>
     :root {
       color-scheme: light;
-      --ink: #151515;
-      --muted: #62666c;
-      --line: #c9ced6;
-      --line-dark: #242424;
+      --ink: #151718;
+      --muted: #5c6268;
+      --line: #c8cdd2;
+      --line-dark: #25282b;
       --paper: #fff;
-      --desk: #eef1f4;
-      --soft: #f7f8fa;
-      --accent: #1f5f68;
+      --desk: #edf0f2;
+      --soft: #f5f7f7;
+      --accent: #1f6268;
+      --accent-soft: #e8f1f1;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html {
+    html,
+    body {
+      max-width: 100%;
       overflow-x: hidden;
     }
 
@@ -31,7 +35,6 @@
       color: var(--ink);
       font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "SimSun", serif;
       line-height: 1.72;
-      overflow-x: hidden;
     }
 
     .toolbar {
@@ -41,7 +44,7 @@
       display: flex;
       justify-content: center;
       padding: 10px 16px;
-      background: rgba(255, 255, 255, 0.94);
+      background: rgba(255, 255, 255, 0.96);
       border-bottom: 1px solid var(--line);
       backdrop-filter: blur(8px);
       font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
@@ -50,18 +53,37 @@
     .toolbar-inner {
       width: min(1120px, 100%);
       display: flex;
-      justify-content: flex-end;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .archive-link,
+    .print-button {
+      min-height: 36px;
+      padding: 8px 14px;
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      font: 600 14px/1.2 "Microsoft YaHei", "PingFang SC", sans-serif;
+      text-decoration: none;
+    }
+
+    .archive-link {
+      background: #fff;
+      color: var(--accent);
     }
 
     .print-button {
       appearance: none;
-      border: 1px solid var(--accent);
       background: var(--accent);
       color: #fff;
-      padding: 8px 16px;
-      border-radius: 4px;
-      font: 600 14px/1 "Microsoft YaHei", "PingFang SC", sans-serif;
       cursor: pointer;
+    }
+
+    .archive-link:focus-visible,
+    .print-button:focus-visible {
+      outline: 3px solid rgba(31, 98, 104, 0.28);
+      outline-offset: 2px;
     }
 
     .paper {
@@ -69,7 +91,7 @@
       margin: 24px auto 40px;
       padding: 42px 52px 58px;
       background: var(--paper);
-      box-shadow: 0 18px 56px rgba(30, 41, 59, 0.14);
+      box-shadow: 0 18px 52px rgba(30, 41, 59, 0.14);
     }
 
     .paper-head {
@@ -88,7 +110,7 @@
     h1 {
       margin: 0;
       font-size: 34px;
-      line-height: 1.18;
+      line-height: 1.2;
       font-weight: 800;
       letter-spacing: 0;
     }
@@ -121,7 +143,7 @@
 
     .notice-score {
       display: grid;
-      grid-template-columns: 1fr 340px;
+      grid-template-columns: minmax(0, 1fr) 340px;
       gap: 24px;
       margin-top: 24px;
       align-items: start;
@@ -168,6 +190,7 @@
     .data-table td {
       border: 1px solid var(--line-dark);
       padding: 6px;
+      overflow-wrap: anywhere;
     }
 
     .score-table th,
@@ -188,7 +211,7 @@
       border-bottom: 1px solid var(--line-dark);
       background: var(--soft);
       font-size: 21px;
-      line-height: 1.35;
+      line-height: 1.4;
       font-weight: 800;
     }
 
@@ -206,65 +229,6 @@
 
     .question-list.compact > li {
       margin-bottom: 15px;
-    }
-
-    .correction-note {
-      margin-top: 18px;
-      padding: 12px 16px;
-      border: 1px solid #b91c1c;
-      border-left: 5px solid #b91c1c;
-      background: #fff7ed;
-      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
-      font-size: 16px;
-      line-height: 1.65;
-    }
-
-    .correction-title {
-      margin: 0 0 4px;
-      font-weight: 700;
-    }
-
-    .correction-note p {
-      margin: 0;
-    }
-
-    .correction-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0 8px;
-      margin-top: 2px;
-    }
-
-    .correction-note a {
-      color: #991b1b;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .wrong-question {
-      scroll-margin-top: 76px;
-      margin-left: -10px;
-      padding: 8px 10px 8px 12px;
-      border-left: 4px solid #b91c1c;
-      background: #fff7ed;
-    }
-
-    .wrong-badge {
-      display: inline-flex;
-      align-items: center;
-      min-height: 22px;
-      margin-left: 8px;
-      padding: 1px 8px;
-      border: 1px solid #b91c1c;
-      border-radius: 999px;
-      background: #fee2e2;
-      color: #991b1b;
-      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 1.35;
-      white-space: nowrap;
-      vertical-align: text-bottom;
     }
 
     .question-text {
@@ -299,16 +263,38 @@
     }
 
     .work-space.tall {
-      min-height: 142px;
+      min-height: 148px;
     }
 
     .work-space.extra {
-      min-height: 210px;
+      min-height: 220px;
     }
 
     .math {
       font-family: "Cambria Math", "Times New Roman", "SimSun", serif;
       white-space: nowrap;
+    }
+
+    .system {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    .system-brace {
+      font-family: "Times New Roman", serif;
+      font-size: 38px;
+      line-height: 1;
+      transform: scaleX(0.72);
+    }
+
+    .system-lines {
+      display: inline-grid;
+      gap: 1px;
+      line-height: 1.3;
+      text-align: left;
     }
 
     .sub-list {
@@ -328,7 +314,7 @@
     }
 
     .wide-figure {
-      max-width: 680px;
+      max-width: 720px;
     }
 
     svg {
@@ -346,6 +332,13 @@
       vector-effect: non-scaling-stroke;
       stroke-linecap: round;
       stroke-linejoin: round;
+    }
+
+    svg .grid-line {
+      stroke: #d5d9dd;
+      stroke-width: 1;
+      fill: none;
+      vector-effect: non-scaling-stroke;
     }
 
     svg .thin {
@@ -368,9 +361,16 @@
     }
 
     svg .caption {
-      fill: #555;
+      fill: #4b5563;
       font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
       font-size: 14px;
+      font-style: normal;
+    }
+
+    svg .tick-label {
+      fill: #4b5563;
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      font-size: 12px;
       font-style: normal;
     }
 
@@ -384,9 +384,28 @@
       break-inside: avoid;
     }
 
+    .paper-footer {
+      margin-top: 34px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+      font: 14px/1.6 "Microsoft YaHei", "PingFang SC", sans-serif;
+    }
+
     @media (max-width: 900px) {
       body {
         line-height: 1.65;
+      }
+
+      .toolbar {
+        padding: 8px 10px;
+      }
+
+      .archive-link,
+      .print-button {
+        padding: 8px 10px;
+        font-size: 13px;
       }
 
       .paper {
@@ -410,11 +429,10 @@
       .notice {
         padding: 12px 14px;
         font-size: 15px;
-        overflow-wrap: anywhere;
       }
 
       .section-title {
-        font-size: 19px;
+        font-size: 18px;
         overflow-wrap: anywhere;
       }
 
@@ -436,7 +454,8 @@
 
       .option-row span,
       .question-text,
-      .notice li {
+      .notice li,
+      .sub-list li {
         min-width: 0;
         overflow-wrap: anywhere;
       }
@@ -446,14 +465,48 @@
         overflow-wrap: anywhere;
       }
 
-      .correction-note {
-        padding: 10px 12px;
-        font-size: 15px;
+      .system {
+        max-width: 100%;
       }
 
-      .wrong-question {
-        margin-left: -6px;
-        padding: 8px 8px 8px 10px;
+      .data-table {
+        font-size: 12px;
+      }
+
+      .data-table th,
+      .data-table td {
+        padding: 4px 2px;
+      }
+
+      .data-table .math {
+        white-space: nowrap;
+        font-size: 11px;
+      }
+
+      svg .tick-label {
+        font-size: 17px;
+      }
+
+      .answer-line {
+        min-width: 112px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .student-row {
+        gap: 10px;
+      }
+
+      .score-table,
+      .answer-table {
+        font-size: 12px;
+      }
+
+      .score-table th,
+      .score-table td,
+      .answer-table th,
+      .answer-table td {
+        padding: 4px 2px;
       }
     }
 
@@ -478,18 +531,51 @@
         box-shadow: none;
       }
 
-      .correction-note,
-      .wrong-question,
-      .wrong-badge {
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
+      h1 {
+        font-size: 30px;
+      }
+
+      .paper-meta {
+        justify-content: center;
+      }
+
+      .student-row {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .notice-score {
+        grid-template-columns: minmax(0, 1fr) 300px;
+      }
+
+      .question-list {
+        padding-left: 2.8em;
+      }
+
+      .option-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 5px 20px;
+      }
+
+      .data-table {
+        font-size: 14px;
+      }
+
+      .data-table .math,
+      .math {
+        white-space: nowrap;
       }
 
       .section,
       .question-list > li,
       .inline-figure,
-      .notice-score {
+      .notice-score,
+      .answer-sheet {
         break-inside: avoid;
+      }
+
+      .work-space {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
       }
     }
   </style>
@@ -497,14 +583,15 @@
 <body>
   <div class="toolbar" aria-label="页面操作">
     <div class="toolbar-inner">
-      <button class="print-button" type="button" onclick="window.print()">打印试卷</button>
+      <a class="archive-link" href="papers/set-a/">往期试卷（一）</a>
+      <button class="print-button" type="button" onclick="window.print()" title="打印当前试卷">打印试卷</button>
     </div>
   </div>
 
-  <main class="paper" aria-label="七年级下册数学期末考试卷">
+  <main class="paper" aria-label="七年级下册数学期末考试卷（二）">
     <header class="paper-head">
-      <p class="paper-kicker">七年级下册 · 数学</p>
-      <h1>七年级下册数学期末考试卷</h1>
+      <p class="paper-kicker">武汉市硚口区 · 七年级下学期 · 数学</p>
+      <h1>七年级下册数学期末考试卷（二）</h1>
       <div class="paper-meta">
         <span>满分：120分</span>
         <span>考试时间：90分钟</span>
@@ -525,6 +612,7 @@
         <ol>
           <li>答题前，请将学校、班级、姓名和考号填写清楚。</li>
           <li>全卷共三大题，27小题；请在规定区域内作答。</li>
+          <li>解答题应写出必要的演算步骤、文字说明或证明过程。</li>
           <li>作图题请使用铅笔、直尺等工具，保留必要辅助线。</li>
         </ol>
       </div>
@@ -533,89 +621,65 @@
         <p class="score-title">得分栏</p>
         <table class="score-table" aria-label="得分栏">
           <thead>
-            <tr>
-              <th>题号</th>
-              <th>一</th>
-              <th>二</th>
-              <th>三</th>
-              <th>总分</th>
-            </tr>
+            <tr><th>题号</th><th>一</th><th>二</th><th>三</th><th>总分</th></tr>
           </thead>
           <tbody>
-            <tr>
-              <td>得分</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+            <tr><td>得分</td><td></td><td></td><td></td><td></td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <section class="correction-note" aria-label="订正标记">
-      <p class="correction-title">订正标记</p>
-      <p>本次最终得分 <strong>106/120</strong>。</p>
-      <p class="correction-links">剩余需订正题目：
-        <a href="#q9">第9题</a><a href="#q14">第14题</a><a href="#q18">第18题</a><a href="#q22">第22题</a>
-      </p>
-    </section>
-
     <section class="section" aria-labelledby="choice-title">
       <h2 id="choice-title" class="section-title">一、选择题（本大题共10小题，每小题3分，共30分）</h2>
       <ol class="question-list compact">
-        <li>
-          <div class="question-text">下列调查中，最适合采用全面调查的是（　　）</div>
-          <div class="option-row"><span>A. 了解本班每名同学的视力情况</span><span>B. 检测一批灯泡的使用寿命</span><span>C. 了解全市七年级学生每天运动时间</span><span>D. 调查某批食品保质期是否达标</span></div>
+        <li data-question="1">
+          <div class="question-text">下列调查中，最适合采用抽样调查的是（　　）</div>
+          <div class="option-row"><span>A. 核对本班学生的到校情况</span><span>B. 清点图书馆某书架上的图书数量</span><span>C. 检测一批节能灯的平均使用寿命</span><span>D. 调查七年级某班每名学生的校服尺码</span></div>
         </li>
-        <li>
-          <div class="question-text">下列实数中，是无理数的是（　　）</div>
-          <div class="option-row"><span>A. <span class="math">-3</span></span><span>B. <span class="math">0.25</span></span><span>C. <span class="math">&radic;5</span></span><span>D. <span class="math">&radic;16</span></span></div>
+        <li data-question="2">
+          <div class="question-text">估计 <span class="math">&radic;15</span> 的值应在（　　）</div>
+          <div class="option-row"><span>A. <span class="math">1</span> 与 <span class="math">2</span> 之间</span><span>B. <span class="math">2</span> 与 <span class="math">3</span> 之间</span><span>C. <span class="math">3</span> 与 <span class="math">4</span> 之间</span><span>D. <span class="math">4</span> 与 <span class="math">5</span> 之间</span></div>
         </li>
-        <li>
-          <div class="question-text">若点 <span class="math">P(a,b)</span> 满足 <span class="math">a&lt;0</span>，<span class="math">b&gt;0</span>，则点 <span class="math">P</span> 在（　　）</div>
-          <div class="option-row"><span>A. 第一象限</span><span>B. 第二象限</span><span>C. 第三象限</span><span>D. 第四象限</span></div>
+        <li data-question="3">
+          <div class="question-text">在平面直角坐标系中，点 <span class="math">P(-3,2)</span> 到 <span class="math">x</span> 轴的距离是（　　）</div>
+          <div class="option-row"><span>A. <span class="math">-3</span></span><span>B. <span class="math">-2</span></span><span>C. <span class="math">2</span></span><span>D. <span class="math">3</span></span></div>
         </li>
-        <li>
-          <div class="question-text">不等式 <span class="math">2x-1&le;5</span> 的解集是（　　）</div>
-          <div class="option-row"><span>A. <span class="math">x&ge;3</span></span><span>B. <span class="math">x&lt;3</span></span><span>C. <span class="math">x&gt;3</span></span><span>D. <span class="math">x&le;3</span></span></div>
+        <li data-question="4">
+          <div class="question-text">在同一平面内，直线 <span class="math">a</span>、<span class="math">b</span> 被直线 <span class="math">c</span> 所截。若一对内错角相等，则（　　）</div>
+          <div class="option-row"><span>A. <span class="math">a&perp;b</span></span><span>B. <span class="math">a&parallel;b</span></span><span>C. <span class="math">a</span> 与 <span class="math">b</span> 相交但不垂直</span><span>D. 无法判断</span></div>
         </li>
-        <li>
-          <div class="question-text">两条平行线被第三条直线所截，若一组同旁内角中一个角为 <span class="math">72&deg;</span>，则另一个角为（　　）</div>
-          <div class="option-row"><span>A. <span class="math">72&deg;</span></span><span>B. <span class="math">98&deg;</span></span><span>C. <span class="math">108&deg;</span></span><span>D. <span class="math">118&deg;</span></span></div>
+        <li data-question="5">
+          <div class="question-text">方程组 <span class="system"><span class="system-brace">{</span><span class="system-lines"><span>2x+y=8</span><span>x-y=1</span></span></span> 的解是（　　）</div>
+          <div class="option-row"><span>A. <span class="math">x=2,y=3</span></span><span>B. <span class="math">x=3,y=2</span></span><span>C. <span class="math">x=4,y=0</span></span><span>D. <span class="math">x=1,y=6</span></span></div>
         </li>
-        <li>
-          <div class="question-text">方程组 <span class="math">{x+y=7, x-y=1}</span> 的解是（　　）</div>
-          <div class="option-row"><span>A. <span class="math">x=4, y=3</span></span><span>B. <span class="math">x=3, y=4</span></span><span>C. <span class="math">x=5, y=2</span></span><span>D. <span class="math">x=2, y=5</span></span></div>
+        <li data-question="6">
+          <div class="question-text">不等式 <span class="math">3-2x&lt;7</span> 的解集是（　　）</div>
+          <div class="option-row"><span>A. <span class="math">x&lt;-2</span></span><span>B. <span class="math">x&gt;-2</span></span><span>C. <span class="math">x&lt;2</span></span><span>D. <span class="math">x&gt;2</span></span></div>
         </li>
-        <li>
-          <div class="question-text">为了解某校七年级学生的课外阅读时间，从中抽取 <span class="math">80</span> 名学生进行调查。本次调查的样本容量是（　　）</div>
-          <div class="option-row"><span>A. 某校七年级学生</span><span>B. <span class="math">80</span></span><span>C. 课外阅读时间</span><span>D. <span class="math">80</span> 名学生的阅读时间</span></div>
+        <li data-question="7">
+          <div class="question-text">为了解某校 <span class="math">1200</span> 名学生的视力情况，随机抽取 <span class="math">100</span> 名学生进行调查。下列说法正确的是（　　）</div>
+          <div class="option-row"><span>A. 抽取的人数越少，调查结果一定越准确</span><span>B. 样本容量是 <span class="math">100</span></span><span>C. 这次调查适合采用全面调查</span><span>D. 可只从同一个班抽取这 <span class="math">100</span> 名学生</span></div>
         </li>
-        <li>
-          <div class="question-text">将点 <span class="math">A(-1,2)</span> 向右平移 <span class="math">3</span> 个单位，再向下平移 <span class="math">4</span> 个单位，得到的点的坐标是（　　）</div>
-          <div class="option-row"><span>A. <span class="math">(-4,6)</span></span><span>B. <span class="math">(2,6)</span></span><span>C. <span class="math">(2,-2)</span></span><span>D. <span class="math">(-4,-2)</span></span></div>
+        <li data-question="8">
+          <div class="question-text">将点 <span class="math">P(-2,3)</span> 平移后得到点 <span class="math">P'(4,1)</span>，这种平移可以是（　　）</div>
+          <div class="option-row"><span>A. 向右 <span class="math">6</span> 个单位、向上 <span class="math">2</span> 个单位</span><span>B. 向左 <span class="math">6</span> 个单位、向下 <span class="math">2</span> 个单位</span><span>C. 向右 <span class="math">6</span> 个单位、向下 <span class="math">2</span> 个单位</span><span>D. 向左 <span class="math">2</span> 个单位、向上 <span class="math">6</span> 个单位</span></div>
         </li>
-        <li id="q9" class="wrong-question">
-          <div class="question-text">若 <span class="math">x&lt;y</span>，则下列不等式一定成立的是（　　）<span class="wrong-badge">错题</span></div>
-          <div class="option-row"><span>A. <span class="math">x+2&lt;y+2</span></span><span>B. <span class="math">-2x&lt;-2y</span></span><span>C. <span class="math">x<sup>2</sup>&lt;y<sup>2</sup></span></span><span>D. <span class="math">x/2&gt;y/2</span></span></div>
+        <li data-question="9">
+          <div class="question-text">下列等式正确的是（　　）</div>
+          <div class="option-row"><span>A. <span class="math">&radic;36=&plusmn;6</span></span><span>B. <span class="math">&#8731;(-8)=2</span></span><span>C. <span class="math">|-&radic;9|=3</span></span><span>D. <span class="math">(-&radic;4)<sup>2</sup>=-4</span></span></div>
         </li>
-        <li>
-          <div class="question-text">下列说法正确的是（　　）</div>
-          <div class="option-row"><span>A. <span class="math">&radic;64=&plusmn;8</span></span><span>B. 若 <span class="math">a<sup>2</sup>=9</span>，则 <span class="math">a=3</span></span><span>C. <span class="math">&#8731;(-27)=-3</span></span><span>D. <span class="math">4</span> 的平方根是 <span class="math">2</span></span></div>
+        <li data-question="10">
+          <div class="question-text">若 <span class="math">a&lt;b</span>，<span class="math">c&lt;0</span>，则下列关系一定成立的是（　　）</div>
+          <div class="option-row"><span>A. <span class="math">a+c&gt;b+c</span></span><span>B. <span class="math">ac&gt;bc</span></span><span>C. <span class="math">a-c&gt;b-c</span></span><span>D. <span class="math">a/c&lt;b/c</span></span></div>
         </li>
       </ol>
 
       <div class="answer-sheet" aria-label="选择题作答栏">
         <table class="answer-table">
           <tbody>
-            <tr>
-              <th>题号</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
-            </tr>
-            <tr>
-              <th>作答</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            </tr>
+            <tr><th>题号</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+            <tr><th>作答</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
           </tbody>
         </table>
       </div>
@@ -624,192 +688,216 @@
     <section class="section" aria-labelledby="blank-title">
       <h2 id="blank-title" class="section-title">二、填空题（本大题共6小题，每小题3分，共18分）</h2>
       <ol class="question-list compact" start="11">
-        <li>计算：<span class="math">|-5|+&radic;49-&#8731;8=</span> <span class="answer-line"></span>。</li>
-        <li>不等式 <span class="math">5-2x&gt;1</span> 的解集是 <span class="answer-line"></span>。</li>
-        <li>若点 <span class="math">P(m-2,3m+1)</span> 在 <span class="math">y</span> 轴上，则 <span class="math">m=</span> <span class="answer-line"></span>。</li>
-        <li id="q14" class="wrong-question">
-          如图，<span class="math">l<sub>1</sub>&parallel;l<sub>2</sub></span>，若 <span class="math">&ang;1=42&deg;</span>，则 <span class="math">&ang;2=</span> <span class="answer-line"></span>。
-          <span class="wrong-badge">错题</span>
+        <li data-question="11">计算：<span class="math">&radic;64+&#8731;(-27)-|-2|=</span> <span class="answer-line"></span>。</li>
+        <li data-question="12">若点 <span class="math">P(2m+4,m-1)</span> 在 <span class="math">y</span> 轴上，则 <span class="math">m=</span> <span class="answer-line"></span>。</li>
+        <li data-question="13">若 <span class="system"><span class="system-brace">{</span><span class="system-lines"><span>x=2</span><span>y=-1</span></span></span> 是方程 <span class="math">ax+2y=8</span> 的解，则 <span class="math">a=</span> <span class="answer-line"></span>。</li>
+        <li data-question="14">
+          如图，<span class="math">l<sub>1</sub>&parallel;l<sub>2</sub></span>，若 <span class="math">&ang;1=55&deg;</span>，则 <span class="math">&ang;2=</span> <span class="answer-line"></span>。
           <div class="inline-figure">
-            <svg viewBox="0 0 420 180" role="img" aria-label="平行线角度图">
-              <line class="line" x1="42" y1="55" x2="378" y2="55"></line>
-              <line class="line" x1="42" y1="125" x2="378" y2="125"></line>
-              <line class="line" x1="160" y1="28" x2="250" y2="152"></line>
-              <text class="label" x="352" y="45">l<tspan baseline-shift="sub" font-size="12">1</tspan></text>
-              <text class="label" x="352" y="116">l<tspan baseline-shift="sub" font-size="12">2</tspan></text>
-              <text class="caption" x="185" y="48">&ang;1</text>
-              <text class="caption" x="235" y="112">&ang;2</text>
+            <svg viewBox="0 0 440 190" role="img" aria-label="两条平行线被截线所截的角度图">
+              <line class="line" x1="42" y1="55" x2="398" y2="55"></line>
+              <line class="line" x1="42" y1="135" x2="398" y2="135"></line>
+              <line class="line" x1="155" y1="24" x2="270" y2="171"></line>
+              <text class="label" x="372" y="45">l<tspan baseline-shift="sub" font-size="12">1</tspan></text>
+              <text class="label" x="372" y="126">l<tspan baseline-shift="sub" font-size="12">2</tspan></text>
+              <text class="caption" x="205" y="82">&ang;1</text>
+              <text class="caption" x="238" y="126">&ang;2</text>
             </svg>
           </div>
         </li>
-        <li>某校合唱队共有 <span class="math">40</span> 人，其中女生比男生多 <span class="math">8</span> 人，则男生有 <span class="answer-line"></span> 人。</li>
-        <li>一组数据 <span class="math">7,8,8,9,10</span> 的众数是 <span class="answer-line"></span>。</li>
+        <li data-question="15">不等式组 <span class="system"><span class="system-brace">{</span><span class="system-lines"><span>x&gt;-2</span><span>x&le;3</span></span></span> 的整数解共有 <span class="answer-line"></span> 个。</li>
+        <li data-question="16">某班 <span class="math">50</span> 名学生各选择一项最喜爱的球类运动，其中篮球 <span class="math">16</span> 人、足球 <span class="math">12</span> 人、乒乓球 <span class="math">14</span> 人，其余选择羽毛球，则选择羽毛球的有 <span class="answer-line"></span> 人。</li>
       </ol>
     </section>
 
     <section class="section" aria-labelledby="solution-title">
       <h2 id="solution-title" class="section-title">三、解答题（本大题共11小题，共72分。解答应写出必要的文字说明、证明过程或演算步骤）</h2>
       <ol class="question-list" start="17">
-        <li>
+        <li data-question="17" data-score="5">
           （本题5分）完成下列各题：
           <ol class="sub-list">
-            <li>计算：<span class="math">&radic;49-|-3|+&#8731;(-27)</span>；</li>
-            <li>解方程：<span class="math">3(x-2)+4=2x+5</span>。</li>
+            <li>计算：<span class="math">&radic;81-&#8731;(-8)-|-4|</span>；</li>
+            <li>解方程：<span class="math">4(x-1)-3=2x+5</span>。</li>
           </ol>
           <div class="work-space"></div>
         </li>
-        <li id="q18" class="wrong-question">
-          （本题5分）解不等式组 <span class="math">{2x+1&ge;-3, 3-x&gt;1}</span>，并把解集在数轴上表示出来。
-          <span class="wrong-badge">错题</span>
+        <li data-question="18" data-score="5">
+          （本题5分）解不等式组 <span class="system"><span class="system-brace">{</span><span class="system-lines"><span>3x-1&le;8</span><span>5-2x&lt;9</span></span></span>，并把解集在数轴上表示出来。
           <div class="work-space"></div>
         </li>
-        <li>
-          （本题5分）解方程组 <span class="math">{2x+y=11, x-2y=-2}</span>。
+        <li data-question="19" data-score="5">
+          （本题5分）解方程组 <span class="system"><span class="system-brace">{</span><span class="system-lines"><span>2x-3y=1</span><span>3x+2y=8</span></span></span>。
           <div class="work-space"></div>
         </li>
-        <li>
-          （本题5分）在平面直角坐标系中，已知 <span class="math">A(-2,1)</span>、<span class="math">B(3,1)</span>、<span class="math">C(1,4)</span>。将三角形 <span class="math">ABC</span> 向右平移 <span class="math">2</span> 个单位，再向下平移 <span class="math">3</span> 个单位，得到三角形 <span class="math">A'B'C'</span>。
+        <li data-question="20" data-score="5">
+          （本题5分）在平面直角坐标系中，已知 <span class="math">A(-3,-1)</span>、<span class="math">B(2,-1)</span>、<span class="math">C(2,3)</span>。将三角形 <span class="math">ABC</span> 向右平移 <span class="math">4</span> 个单位，再向下平移 <span class="math">2</span> 个单位，得到三角形 <span class="math">A'B'C'</span>。
           <ol class="sub-list">
-            <li>写出 <span class="math">A'</span>、<span class="math">B'</span>、<span class="math">C'</span> 的坐标；</li>
+            <li>写出点 <span class="math">A'</span>、<span class="math">B'</span>、<span class="math">C'</span> 的坐标；</li>
             <li>求三角形 <span class="math">ABC</span> 的面积。</li>
           </ol>
           <div class="work-space"></div>
         </li>
-        <li>
-          （本题6分）某校抽取 <span class="math">40</span> 名学生进行一分钟跳绳测试，成绩分组如下表。
-          <table class="data-table" aria-label="跳绳成绩频数表">
+        <li data-question="21" data-score="6">
+          （本题6分）为了解七年级学生每天上学单程所用时间，随机抽取 <span class="math">50</span> 名学生进行调查，得到如下频数表。
+          <table class="data-table" aria-label="上学单程所用时间频数表">
             <thead>
-              <tr><th>成绩 x（次）</th><th>80&le;x&lt;100</th><th>100&le;x&lt;120</th><th>120&le;x&lt;140</th><th>140&le;x&lt;160</th><th>160&le;x&lt;180</th></tr>
+              <tr><th>时间 <span class="math">t</span>（分钟）</th><th><span class="math">[0,10)</span></th><th><span class="math">[10,20)</span></th><th><span class="math">[20,30)</span></th><th><span class="math">[30,40)</span></th><th><span class="math">[40,50)</span></th></tr>
             </thead>
             <tbody>
-              <tr><th>频数</th><td>4</td><td>8</td><td>14</td><td>10</td><td>4</td></tr>
+              <tr><th>频数</th><td>4</td><td>12</td><td>18</td><td>10</td><td>6</td></tr>
             </tbody>
           </table>
           <ol class="sub-list">
-            <li>根据表中数据绘制频数分布直方图；</li>
-            <li>求成绩达到 <span class="math">140</span> 次及以上的学生所占百分比；</li>
-            <li>若该校七年级共有 <span class="math">600</span> 名学生，估计成绩达到 <span class="math">140</span> 次及以上的学生人数。</li>
+            <li>根据表中数据，在下图中绘制频数分布直方图；</li>
+            <li>求单程所用时间少于 <span class="math">30</span> 分钟的学生所占百分比；</li>
+            <li>若该校七年级共有 <span class="math">800</span> 名学生，估计单程所用时间少于 <span class="math">30</span> 分钟的学生人数。</li>
           </ol>
-          <div class="work-space tall"></div>
-        </li>
-        <li id="q22" class="wrong-question">
-          （本题6分）学校准备购买甲、乙两种奖品共 <span class="math">60</span> 件。甲奖品每件 <span class="math">8</span> 元，乙奖品每件 <span class="math">5</span> 元，共用 <span class="math">390</span> 元。求甲、乙两种奖品各购买多少件。
-          <span class="wrong-badge">错题</span>
-          <div class="work-space"></div>
-        </li>
-        <li>
-          （本题6分）如图，<span class="math">AB&parallel;CD</span>，点 <span class="math">E</span> 在两条平行线之间，连接 <span class="math">BE</span>、<span class="math">CE</span>。若 <span class="math">&ang;ABE=38&deg;</span>，<span class="math">&ang;DCE=52&deg;</span>，求 <span class="math">&ang;BEC</span> 的度数。
-          <div class="inline-figure">
-            <svg viewBox="0 0 460 250" role="img" aria-label="平行线夹角图">
-              <line class="line" x1="48" y1="45" x2="410" y2="45"></line>
-              <line class="line" x1="48" y1="220" x2="410" y2="220"></line>
-              <circle class="point" cx="120" cy="45" r="4"></circle>
-              <circle class="point" cx="160" cy="220" r="4"></circle>
-              <circle class="point" cx="230" cy="130" r="4"></circle>
-              <line class="shape" x1="120" y1="45" x2="230" y2="130"></line>
-              <line class="shape" x1="160" y1="220" x2="230" y2="130"></line>
-              <text class="label" x="378" y="38">A</text>
-              <text class="label" x="126" y="38">B</text>
-              <text class="label" x="135" y="241">C</text>
-              <text class="label" x="382" y="241">D</text>
-              <text class="label" x="238" y="128">E</text>
-              <text class="caption" x="143" y="70">38&deg;</text>
-              <text class="caption" x="183" y="203">52&deg;</text>
+          <div class="inline-figure wide-figure">
+            <svg viewBox="0 0 700 300" role="img" aria-label="待绘制的频数分布直方图坐标网格">
+              <defs>
+                <marker id="hist-arrow-x" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#111827"></path></marker>
+                <marker id="hist-arrow-y" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#111827"></path></marker>
+              </defs>
+              <line class="grid-line" x1="70" y1="225" x2="640" y2="225"></line>
+              <line class="grid-line" x1="70" y1="180" x2="640" y2="180"></line>
+              <line class="grid-line" x1="70" y1="135" x2="640" y2="135"></line>
+              <line class="grid-line" x1="70" y1="90" x2="640" y2="90"></line>
+              <line class="grid-line" x1="70" y1="45" x2="640" y2="45"></line>
+              <line class="axis" x1="70" y1="270" x2="655" y2="270" marker-end="url(#hist-arrow-x)"></line>
+              <line class="axis" x1="70" y1="270" x2="70" y2="30" marker-end="url(#hist-arrow-y)"></line>
+              <text class="tick-label" x="48" y="274">0</text>
+              <text class="tick-label" x="48" y="229">5</text>
+              <text class="tick-label" x="41" y="184">10</text>
+              <text class="tick-label" x="41" y="139">15</text>
+              <text class="tick-label" x="41" y="94">20</text>
+              <text class="tick-label" x="22" y="28">频数</text>
+              <text class="tick-label" x="575" y="258">时间/分钟</text>
+              <text class="tick-label" x="98" y="289">[0,10)</text>
+              <text class="tick-label" x="207" y="289">[10,20)</text>
+              <text class="tick-label" x="321" y="289">[20,30)</text>
+              <text class="tick-label" x="435" y="289">[30,40)</text>
+              <text class="tick-label" x="549" y="289">[40,50)</text>
             </svg>
           </div>
           <div class="work-space"></div>
         </li>
-        <li>
-          （本题6分）购买矿泉水时，甲店每箱 <span class="math">24</span> 元，另收配送费 <span class="math">60</span> 元；乙店每箱 <span class="math">30</span> 元，免配送费。设购买 <span class="math">x</span> 箱矿泉水，且 <span class="math">x</span> 为正整数。
+        <li data-question="22" data-score="6">
+          （本题6分）某研学小组师生共 <span class="math">50</span> 人参观科技馆。教师票每张 <span class="math">12</span> 元，学生票每张 <span class="math">8</span> 元，共付票款 <span class="math">440</span> 元。求教师和学生各有多少人。
+          <div class="work-space"></div>
+        </li>
+        <li data-question="23" data-score="6">
+          （本题6分）如图，<span class="math">AB&parallel;CD</span>，直线 <span class="math">EF</span> 分别与 <span class="math">AB</span>、<span class="math">CD</span> 交于点 <span class="math">E</span>、<span class="math">F</span>。若 <span class="math">&ang;BEF=58&deg;</span>，射线 <span class="math">FG</span> 平分 <span class="math">&ang;EFD</span>，求 <span class="math">&ang;GFD</span> 的度数。
+          <div class="inline-figure">
+            <svg viewBox="0 0 500 260" role="img" aria-label="平行线与角平分线图">
+              <line class="line" x1="42" y1="48" x2="458" y2="48"></line>
+              <line class="line" x1="42" y1="218" x2="458" y2="218"></line>
+              <line class="shape" x1="150" y1="48" x2="256" y2="218"></line>
+              <line class="shape" x1="256" y1="218" x2="329" y2="87"></line>
+              <circle class="point" cx="150" cy="48" r="4"></circle>
+              <circle class="point" cx="256" cy="218" r="4"></circle>
+              <text class="label" x="50" y="40">A</text>
+              <text class="label" x="438" y="40">B</text>
+              <text class="label" x="50" y="241">C</text>
+              <text class="label" x="438" y="241">D</text>
+              <text class="label" x="136" y="39">E</text>
+              <text class="label" x="244" y="243">F</text>
+              <text class="label" x="335" y="87">G</text>
+              <text class="caption" x="174" y="82">58&deg;</text>
+            </svg>
+          </div>
+          <div class="work-space"></div>
+        </li>
+        <li data-question="24" data-score="6">
+          （本题6分）某展馆有两种购票方案。方案甲按个人票购买，每人 <span class="math">18</span> 元；方案乙购买团体票，每人 <span class="math">13</span> 元，另收一次性讲解服务费 <span class="math">70</span> 元。设参加活动的有 <span class="math">x</span> 人，且 <span class="math">x</span> 为正整数。
           <ol class="sub-list">
-            <li>分别用含 <span class="math">x</span> 的式子表示在甲店、乙店购买的总费用；</li>
-            <li>当购买多少箱时，在甲店购买更省钱？</li>
+            <li>分别用含 <span class="math">x</span> 的式子表示两种方案的总费用；</li>
+            <li>至少有多少人时，选择方案乙更省钱？</li>
           </ol>
           <div class="work-space"></div>
         </li>
-        <li>
-          （本题8分）如图，点 <span class="math">O</span> 在直线 <span class="math">AB</span> 上，射线 <span class="math">OC</span> 在直线 <span class="math">AB</span> 上方。射线 <span class="math">OE</span> 平分 <span class="math">&ang;AOC</span>，射线 <span class="math">OF</span> 平分 <span class="math">&ang;BOC</span>，求证：<span class="math">OE&perp;OF</span>。
+        <li data-question="25" data-score="8">
+          （本题8分）如图，<span class="math">AB&parallel;CD</span>，点 <span class="math">E</span>、<span class="math">F</span> 分别在直线 <span class="math">AB</span>、<span class="math">CD</span> 上，连接 <span class="math">EF</span>。射线 <span class="math">EG</span> 平分 <span class="math">&ang;BEF</span>，射线 <span class="math">FH</span> 平分 <span class="math">&ang;EFC</span>。求证：<span class="math">EG&parallel;FH</span>。
           <div class="inline-figure">
-            <svg viewBox="0 0 460 250" role="img" aria-label="相邻补角角平分线图">
-              <line class="line" x1="55" y1="190" x2="405" y2="190"></line>
-              <line class="shape" x1="230" y1="190" x2="275" y2="55"></line>
-              <line class="shape" x1="230" y1="190" x2="132" y2="98"></line>
-              <line class="shape" x1="230" y1="190" x2="350" y2="112"></line>
-              <circle class="point" cx="230" cy="190" r="5"></circle>
-              <text class="label" x="63" y="184">A</text>
-              <text class="label" x="390" y="184">B</text>
-              <text class="label" x="280" y="50">C</text>
-              <text class="label" x="112" y="96">E</text>
-              <text class="label" x="358" y="112">F</text>
-              <text class="label" x="238" y="214">O</text>
+            <svg viewBox="0 0 500 280" role="img" aria-label="平行线角平分线证明图">
+              <line class="line" x1="42" y1="56" x2="458" y2="56"></line>
+              <line class="line" x1="42" y1="224" x2="458" y2="224"></line>
+              <line class="shape" x1="264" y1="56" x2="170" y2="224"></line>
+              <line class="shape" x1="264" y1="56" x2="380" y2="224"></line>
+              <line class="shape" x1="170" y1="224" x2="64" y2="78"></line>
+              <circle class="point" cx="264" cy="56" r="4"></circle>
+              <circle class="point" cx="170" cy="224" r="4"></circle>
+              <text class="label" x="50" y="47">A</text>
+              <text class="label" x="440" y="47">B</text>
+              <text class="label" x="50" y="248">C</text>
+              <text class="label" x="440" y="248">D</text>
+              <text class="label" x="270" y="48">E</text>
+              <text class="label" x="177" y="248">F</text>
+              <text class="label" x="386" y="225">G</text>
+              <text class="label" x="49" y="76">H</text>
             </svg>
           </div>
           <div class="work-space tall"></div>
         </li>
-        <li>
-          （本题8分）为了解七年级学生每周劳动实践时间，随机抽取 <span class="math">40</span> 名学生进行调查，分组统计如下表。
-          <table class="data-table" aria-label="劳动实践时间频数表">
+        <li data-question="26" data-score="8">
+          （本题8分）为了解七年级学生每月到图书馆借阅图书的次数，随机抽取 <span class="math">50</span> 名学生进行调查，整理数据如下表。
+          <table class="data-table" aria-label="每月借阅图书次数频数表">
             <thead>
-              <tr><th>组别</th><th>A</th><th>B</th><th>C</th><th>D</th></tr>
-              <tr><th>每周劳动实践时间 t（小时）</th><th>t&lt;1</th><th>1&le;t&lt;2</th><th>2&le;t&lt;3</th><th>t&ge;3</th></tr>
+              <tr><th>组别</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr>
+              <tr><th>借阅次数 <span class="math">x</span></th><th><span class="math">[0,2)</span></th><th><span class="math">[2,4)</span></th><th><span class="math">[4,6)</span></th><th><span class="math">[6,8)</span></th><th><span class="math">&ge;8</span></th></tr>
             </thead>
             <tbody>
-              <tr><th>频数</th><td>4</td><td>12</td><td>m</td><td>8</td></tr>
+              <tr><th>频数</th><td>5</td><td>12</td><td><span class="math">m</span></td><td>10</td><td>8</td></tr>
             </tbody>
           </table>
           <ol class="sub-list">
             <li>求 <span class="math">m</span> 的值；</li>
             <li>求 C 组在扇形统计图中所对应扇形的圆心角度数；</li>
-            <li>若该校七年级共有 <span class="math">600</span> 名学生，估计每周劳动实践时间不少于 <span class="math">2</span> 小时的学生人数；</li>
-            <li>判断这 <span class="math">40</span> 名学生每周劳动实践时间的中位数落在哪一组。</li>
+            <li>若该校七年级共有 <span class="math">750</span> 名学生，估计每月借阅不少于 <span class="math">6</span> 次的学生人数；</li>
+            <li>判断这 <span class="math">50</span> 名学生每月借阅次数的中位数落在哪一组。</li>
           </ol>
           <div class="work-space tall"></div>
         </li>
-        <li>
-          （本题12分）已知点 <span class="math">A(8,6)</span>、<span class="math">B(2,2)</span>，将线段 <span class="math">AB</span> 向左平移 <span class="math">m(m&gt;0)</span> 个单位长度得到线段 <span class="math">CD</span>，其中点 <span class="math">A</span> 的对应点为 <span class="math">C</span>，点 <span class="math">B</span> 的对应点为 <span class="math">D</span>。
+        <li data-question="27" data-score="12">
+          （本题12分）在平面直角坐标系中，已知点 <span class="math">A(-4,1)</span>、<span class="math">B(2,1)</span>。将线段 <span class="math">AB</span> 向右平移 <span class="math">3</span> 个单位，再向上平移 <span class="math">4</span> 个单位，得到线段 <span class="math">CD</span>，其中点 <span class="math">A</span>、<span class="math">B</span> 的对应点分别为点 <span class="math">C</span>、<span class="math">D</span>，四边形 <span class="math">ABDC</span> 为平行四边形。
           <ol class="sub-list">
-            <li>当 <span class="math">m=3</span> 时，写出点 <span class="math">C</span>、<span class="math">D</span> 的坐标，并求三角形 <span class="math">ABC</span> 的面积；</li>
-            <li>设直线 <span class="math">AD</span> 与 <span class="math">y</span> 轴交于点 <span class="math">P</span>，且点 <span class="math">P</span> 在原点上方，已知 <span class="math">OP=2</span>，求 <span class="math">m</span> 的值；</li>
-            <li>当 <span class="math">m=4</span> 时，在由 <span class="math">A</span>、<span class="math">C</span>、<span class="math">D</span>、<span class="math">B</span> 依次围成的平行四边形 <span class="math">ACDB</span> 内取动点 <span class="math">M(a,a+2)</span>（<span class="math">0&lt;a&lt;4</span>），连接 <span class="math">AM</span>、<span class="math">BM</span>、<span class="math">CM</span>、<span class="math">DM</span>。记三角形 <span class="math">ABM</span> 的面积为 <span class="math">S<sub>1</sub></span>，三角形 <span class="math">CDM</span> 的面积为 <span class="math">S<sub>2</sub></span>，判断 <span class="math">S<sub>1</sub>+S<sub>2</sub></span> 是否与 <span class="math">a</span> 有关，并说明理由。</li>
+            <li>写出点 <span class="math">C</span>、<span class="math">D</span> 的坐标，并求平行四边形 <span class="math">ABDC</span> 的面积；</li>
+            <li>点 <span class="math">E(0,t)</span> 在平行四边形 <span class="math">ABDC</span> 内，若三角形 <span class="math">ABE</span> 的面积等于三角形 <span class="math">CDE</span> 面积的一半，求 <span class="math">t</span> 的值；</li>
+            <li>点 <span class="math">M(a,a+2)</span> 在平行四边形 <span class="math">ABDC</span> 内，且 <span class="math">-1&lt;a&lt;3</span>。记三角形 <span class="math">ABM</span>、三角形 <span class="math">CDM</span> 的面积分别为 <span class="math">S<sub>1</sub></span>、<span class="math">S<sub>2</sub></span>，判断 <span class="math">S<sub>1</sub>+S<sub>2</sub></span> 是否随 <span class="math">a</span> 的变化而变化，并说明理由。</li>
           </ol>
           <div class="inline-figure wide-figure">
-            <svg viewBox="0 0 620 330" role="img" aria-label="坐标压轴题示意图">
+            <svg viewBox="0 0 650 350" role="img" aria-label="平移形成平行四边形的坐标示意图">
               <defs>
-                <marker id="arrow-x" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
-                  <path d="M0,0 L8,4 L0,8 Z" fill="#111827"></path>
-                </marker>
-                <marker id="arrow-y" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
-                  <path d="M0,0 L8,4 L0,8 Z" fill="#111827"></path>
-                </marker>
+                <marker id="coord-arrow-x" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#111827"></path></marker>
+                <marker id="coord-arrow-y" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,4 L0,8 Z" fill="#111827"></path></marker>
               </defs>
-              <line class="axis" x1="42" y1="275" x2="580" y2="275" marker-end="url(#arrow-x)"></line>
-              <line class="axis" x1="260" y1="305" x2="260" y2="35" marker-end="url(#arrow-y)"></line>
-              <text class="label" x="586" y="283">x</text>
-              <text class="label" x="246" y="29">y</text>
-              <text class="label" x="240" y="298">O</text>
-              <polygon class="shape" points="540,100 400,100 190,200 330,200"></polygon>
-              <line class="shape" x1="540" y1="100" x2="330" y2="200"></line>
-              <line class="shape" x1="540" y1="100" x2="330" y2="150"></line>
-              <line class="shape" x1="330" y1="200" x2="330" y2="150"></line>
-              <line class="shape" x1="400" y1="100" x2="330" y2="150"></line>
-              <line class="shape" x1="190" y1="200" x2="330" y2="150"></line>
-              <circle class="point" cx="540" cy="100" r="5"></circle>
-              <circle class="point" cx="330" cy="200" r="5"></circle>
-              <circle class="point" cx="400" cy="100" r="5"></circle>
-              <circle class="point" cx="190" cy="200" r="5"></circle>
-              <circle class="point" cx="330" cy="150" r="5"></circle>
-              <text class="label" x="548" y="94">A</text>
-              <text class="label" x="337" y="224">B</text>
-              <text class="label" x="381" y="94">C</text>
-              <text class="label" x="169" y="224">D</text>
-              <text class="label" x="338" y="146">M</text>
-              <text class="caption" x="302" y="315">示意图</text>
+              <line class="axis" x1="36" y1="305" x2="610" y2="305" marker-end="url(#coord-arrow-x)"></line>
+              <line class="axis" x1="265" y1="326" x2="265" y2="28" marker-end="url(#coord-arrow-y)"></line>
+              <text class="label" x="616" y="313">x</text>
+              <text class="label" x="251" y="24">y</text>
+              <text class="label" x="246" y="329">O</text>
+              <polygon class="shape" points="85,260 355,260 490,100 220,100"></polygon>
+              <line class="dash thin" x1="265" y1="305" x2="265" y2="100"></line>
+              <circle class="point" cx="85" cy="260" r="5"></circle>
+              <circle class="point" cx="355" cy="260" r="5"></circle>
+              <circle class="point" cx="220" cy="100" r="5"></circle>
+              <circle class="point" cx="490" cy="100" r="5"></circle>
+              <circle class="point" cx="265" cy="190" r="5"></circle>
+              <circle class="point" cx="330" cy="165" r="5"></circle>
+              <text class="label" x="66" y="282">A</text>
+              <text class="label" x="360" y="282">B</text>
+              <text class="label" x="201" y="92">C</text>
+              <text class="label" x="497" y="92">D</text>
+              <text class="label" x="246" y="185">E</text>
+              <text class="label" x="338" y="160">M</text>
+              <text class="caption" x="535" y="338">示意图</text>
             </svg>
           </div>
           <div class="work-space extra"></div>
         </li>
       </ol>
     </section>
+
+    <footer class="paper-footer">试卷（二）完</footer>
   </main>
 </body>
 </html>
